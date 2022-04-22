@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: password
+  pool: 5
+
+development:
+  <<: *default
+  database: wt-pokemon-mq_development
+
+test:
+  <<: *default
+  database: wt-pokemon-mq_test
+
+production:
+  <<: *default
+  database: wt-pokemon-mq_production
+  username: wt-pokemon-mq
+  password: <%= ENV['WT-POKEMON-MQ_DATABASE_PASSWORD'] %>
