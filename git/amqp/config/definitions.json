@@ -41,7 +41,7 @@
   "policies": [],
   "queues": [
     {
-      "name": "mamaco",
+      "name": "world_trader_queue",
       "vhost": "/",
       "durable": true,
       "auto_delete": false,
