@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2022_04_22_183839) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "posts", force: :cascade do |t|
+  create_table "transfers", force: :cascade do |t|
     t.string "trainer"
     t.string "pokemon"
     t.datetime "created_at", null: false

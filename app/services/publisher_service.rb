@@ -3,13 +3,14 @@ class PublisherService
     @connection = Bunny.new(hostname: 'rabbitmq')
   end
   def send(exchange, message = {})
-    event = channel.fanout("world_trader") 
+    event = channel.fanout("world_trader.#{exchange}")
 
     event.publish(message.to_json)
+    @connection.close
   end
 
   def channel
-    @channel = connection.create_channel
+    connection.create_channel
   end
 
   def connection

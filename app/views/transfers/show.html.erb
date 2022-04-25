@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Trainer:</strong>
+  <%= @transfer.trainer %>
+</p>
+
+<p>
+  <strong>Pokemon:</strong>
+  <%= @transfer.pokemon %>
+</p>
+
+<%= link_to 'Edit', edit_transfer_path(@transfer) %> |
+<%= link_to 'Back', transfers_path %>
