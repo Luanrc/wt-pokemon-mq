@@ -41,7 +41,14 @@
   "policies": [],
   "queues": [
     {
-      "name": "world_trader_queue",
+      "name": "world_trader_queue_ping",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "world_trader_queue_pong",
       "vhost": "/",
       "durable": true,
       "auto_delete": false,
@@ -50,7 +57,16 @@
   ],
   "exchanges": [
     {
-      "name": "world_trader",
+      "name": "world_trader_ping",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "world_trader_pong",
       "vhost": "/",
       "type": "fanout",
       "durable": true,
@@ -61,12 +77,21 @@
   ],
   "bindings": [
     {
-      "source": "world_trader",
-      "destination": "world_trader_queue",
+      "source": "world_trader_ping",
+      "destination": "world_trader_queue_ping",
+      "routing_key": "route_to_everybody",
+      "destination_type": "queue",
+      "arguments": {},
+      "vhost": "/"
+    },
+    {
+      "source": "world_trader_pong",
+      "destination": "world_trader_queue_pong",
       "routing_key": "route_to_everybody",
       "destination_type": "queue",
       "arguments": {},
       "vhost": "/"
     }
+
   ]
 }

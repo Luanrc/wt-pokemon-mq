@@ -23,7 +23,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'bunny', '~> 2.14', '>= 2.14.2'
-
+gem 'sneakers'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
