@@ -61,9 +61,9 @@
   ],
   "bindings": [
     {
-      "source": "something",
-      "destination": "mamaco",
-      "routing_key": "mamaco.key",
+      "source": "world_trader",
+      "destination": "world_trader_queue",
+      "routing_key": "route_to_everybody",
       "destination_type": "queue",
       "arguments": {},
       "vhost": "/"

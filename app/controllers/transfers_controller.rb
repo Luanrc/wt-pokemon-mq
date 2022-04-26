@@ -26,7 +26,7 @@ class TransfersController < ApplicationController
     respond_to do |format|
       if @transfer.save
         service = PublisherService.new()
-        service.send("transfers", @transfer.attributes)
+        service.send(@transfer.attributes)
         format.html { redirect_to transfer_url(@transfer), notice: "Transfer was successfully created." }
         format.json { render :show, status: :created, location: @transfer }
       else
